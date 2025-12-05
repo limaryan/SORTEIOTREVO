@@ -1,0 +1,60 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #fafafa;
+}
+
+.ticket {
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+}
+
+.trevo {
+  position: relative;
+  display: inline-block;
+}
+
+.trevo-img {
+  width: 220px; /* ajuste conforme sua imagem */
+}
+
+/* Posições das 4 folhas (trevo diagonal estilo X) */
+
+.folha {
+  position: absolute;
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Folha Superior */
+.folha.sup {
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Folha Esquerda */
+.folha.esq {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+/* Folha Direita */
+.folha.dir {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+/* Folha Inferior */
+.folha.inf {
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
