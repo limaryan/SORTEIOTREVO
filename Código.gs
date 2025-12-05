@@ -4,7 +4,7 @@ function doGet() {
 
 // Gera 4 números únicos (milhares)
 function gerarBilhete(seller) {
-  const sheet = SpreadsheetApp.openById("AQUI_O_ID_DA_SUA_PLANILHA")
+  const sheet = SpreadsheetApp.openById("1wvmhpWOwhPIgni3a6_ArXGjT2xupisvpNTCwOeC0ASA")
     .getSheetByName("Bilhetes");
 
   const numeros = [];
