@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Gerador de Bilhetes</h1>
+
+  <input id="seller" placeholder="Digite o vendedor">
+  <button onclick="gerar()">Gerar 100 Bilhetes</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function gerar() {
+      const seller = document.getElementById("seller").value || "desconhecido";
+
+      google.script.run.withSuccessHandler(desenharBilhetes)
+        .gerarLote(seller);
+    }
+
+    function desenharBilhetes(lista) {
+      const container = document.getElementById("resultado");
+      container.innerHTML = "";
+
+      lista.forEach((numeros, i) => {
+        const card = document.createElement("div");
+        card.className = "ticket";
+
+        card.innerHTML = `
+          <div class="trevo">
+            <img src="https://i.imgur.com/WwM1ZwP.png" class="trevo-img">
+            <span class="folha sup">${numeros[0]}</span>
+            <span class="folha esq">${numeros[1]}</span>
+            <span class="folha dir">${numeros[2]}</span>
+            <span class="folha inf">${numeros[3]}</span>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
